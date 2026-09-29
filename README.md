@@ -1,20 +1,7 @@
 # 暖心語
 
-一個語氣溫柔、可連續對話的小網站。把情緒說出來，得到像心靈鷀湯、但不說教的回覆。
+一個語氣溫柔、可連續對話的小網站。
 
-## 功能
+倉庫：https://github.com/terrytse123/warm-heart
 
-- **對話**：連續聊天氣泡，記住本輪心情
-- **呼吸**：4-4-6 引導
-- **一碗湯**：短句鷀湯
-- **小記**：把喜歡的句子存在瀏覽器
-
-## 本機使用
-
-用瀏覽器打開 `index.html` 即可。
-
-## 部署
-
-匯入 GitHub 倉庫 `terrytse123/warm-heart` 到 Vercel，Framework 選 Other。
-
-注意：這不是心理諮商或醫療工具。
+用瀏覽器打開 `index.html`，或匯入 Vercel（Framework: Other）。

@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>暖心語 · 把情緒輕輕放下</title>
-  <meta name="description" content="一個懂得安慰人的小角落。說出此刻的感覺，讓一句溫柔的話接住你。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -23,61 +19,51 @@
           <p class="tag">我在，你可以慢慢說</p>
         </div>
       </div>
-      <nav class="tabs" role="tablist">
-        <button class="tab is-on" data-view="talk" role="tab">對話</button>
-        <button class="tab" data-view="breathe" role="tab">呼吸</button>
-        <button class="tab" data-view="soup" role="tab">一碗湯</button>
-        <button class="tab" data-view="journal" role="tab">小記</button>
+      <nav class="tabs">
+        <button type="button" class="tab is-on" data-view="talk">對話</button>
+        <button type="button" class="tab" data-view="breathe">呼吸</button>
+        <button type="button" class="tab" data-view="soup">一碗湯</button>
+        <button type="button" class="tab" data-view="journal">小記</button>
       </nav>
     </header>
     <main>
       <section id="view-talk" class="view is-on chat-view">
-        <div class="thread" id="thread" aria-live="polite"></div>
+        <div class="thread" id="thread"></div>
         <div class="composer">
-          <div class="moods" id="moods">
-            <button class="chip" data-mood="tired" data-seed="今天好累，好像怎麼睡都補不回來。">好累</button>
-            <button class="chip" data-mood="sad" data-seed="心裡悶悶的，說不上來為什麼難過。">難過</button>
-            <button class="chip" data-mood="anxious" data-seed="腦子停不下來，一直在擔心還沒發生的事。">焦慮</button>
-            <button class="chip" data-mood="lonely" data-seed="明明有人在，還是覺得沒被接住。">孤單</button>
-            <button class="chip" data-mood="angry" data-seed="有點委屈，也有點生氣，不知道該跟誰說。">委屈</button>
-            <button class="chip" data-mood="lost" data-seed="暫時看不清下一步，有點迷惱。">迷惱</button>
+          <div class="moods">
+            <button type="button" class="chip" data-mood="tired" data-seed="今天好累，好像怎麼睡都補不回來。">好累</button>
+            <button type="button" class="chip" data-mood="sad" data-seed="心裡悶悶的，說不上來為什麼難過。">難過</button>
+            <button type="button" class="chip" data-mood="anxious" data-seed="腦子停不下來，一直在擔心還沒發生的事。">焦慮</button>
+            <button type="button" class="chip" data-mood="lonely" data-seed="明明有人在，還是覺得沒被接住。">孤單</button>
+            <button type="button" class="chip" data-mood="angry" data-seed="有點委屈，也有點生氣。">委屈</button>
+            <button type="button" class="chip" data-mood="lost" data-seed="暫時看不清下一步，有點迷惱。">迷惱</button>
           </div>
           <form id="talk-form" class="bar">
-            <label class="sr" for="feel">訊息</label>
             <textarea id="feel" rows="1" placeholder="跟我說一件正在發生的事……" maxlength="800"></textarea>
-            <button type="submit" class="send" id="send">送出</button>
+            <button type="submit" class="send">送出</button>
           </form>
           <div class="bar-meta">
-            <span id="count">Enter 送出 · Shift+Enter 換行</span>
+            <span>Enter 送出</span>
             <button type="button" class="text-btn" id="new-chat">新的一輪</button>
           </div>
         </div>
       </section>
       <section id="view-breathe" class="view">
-        <p class="lead">先別急著想清楚。跟著圓圈，把氣慢慢送出去。</p>
+        <p class="lead">跟著圓圈，把氣慢慢送出去。</p>
         <div class="breath-wrap">
           <div class="orb" id="orb"><span id="orb-word">準備</span></div>
-          <p class="breath-meta">吸氣 4 · 停留 4 · 呼氣 6</p>
-          <button class="btn" id="breath-toggle">開始呼吸</button>
+          <button type="button" class="btn" id="breath-toggle">開始呼吸</button>
         </div>
       </section>
       <section id="view-soup" class="view">
-        <p class="lead">心靈鷀湯不是要你立刻好起來，只是提醒：你不是一個人。</p>
-        <blockquote class="soup-card">
-          <p id="soup-text"></p>
-          <cite id="soup-cite"></cite>
-        </blockquote>
-        <button class="btn" id="next-soup">再盛一勺</button>
+        <blockquote class="soup-card"><p id="soup-text"></p><cite id="soup-cite"></cite></blockquote>
+        <button type="button" class="btn" id="next-soup">再盛一勺</button>
       </section>
       <section id="view-journal" class="view">
-        <p class="lead">從對話裡留下來的句子，給心一個座位。</p>
         <div class="journal-list" id="journal-list"></div>
-        <p class="empty" id="journal-empty">還沒有小記。在對話氣泡上按「收下」，就會出現在這裡。</p>
+        <p class="empty" id="journal-empty">還沒有小記。</p>
       </section>
     </main>
-    <footer>
-      <p>這裡不診斷、不說教。若情緒很重，請尋求身邊的人或當地協助專線。</p>
-    </footer>
   </div>
   <script src="app.js"></script>
 </body>
