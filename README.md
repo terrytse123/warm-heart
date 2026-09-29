@@ -1,9 +1,20 @@
 # 暖心語
 
-一個語氣溫柔、會接住情緒的小網站。
+一個語氣溫柔、可連續對話的小網站。把情緒說出來，得到像心靈鷀湯、但不說教的回覆。
 
-## 部署到 Vercel
+## 功能
 
-1. 打開 https://vercel.com/new
-2. 匯入 GitHub 倉庫 `terrytse123/warm-heart`
-3. Framework 選 Other，直接 Deploy
+- **對話**：連續聊天氣泡，記住本輪心情
+- **呼吸**：4-4-6 引導
+- **一碗湯**：短句鷀湯
+- **小記**：把喜歡的句子存在瀏覽器
+
+## 本機使用
+
+用瀏覽器打開 `index.html` 即可。
+
+## 部署
+
+匯入 GitHub 倉庫 `terrytse123/warm-heart` 到 Vercel，Framework 選 Other。
+
+注意：這不是心理諮商或醫療工具。
