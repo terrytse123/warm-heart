@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>暖心語 · 把情緒輕輕放下</title>
+  <meta name="description" content="一個懂得安慰人的小角落。說出此刻的感覺，讓一句溫柔的話接住你。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+  <div class="paper"></div>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">◌</span>
+      <div>
+        <h1>暖心語</h1>
+        <p class="tag">把情緒輕輕放下的地方</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab is-on" data-view="talk" role="tab">傾訴</button>
+      <button class="tab" data-view="breathe" role="tab">呼吸</button>
+      <button class="tab" data-view="soup" role="tab">一碗湯</button>
+      <button class="tab" data-view="journal" role="tab">小記</button>
+    </nav>
+  </header>
+  <main>
+    <section id="view-talk" class="view is-on">
+      <p class="lead">你不用一次把話說得很完整。隨便寫一點，我都在。</p>
+      <div class="moods" id="moods">
+        <button class="chip" data-mood="tired">好累</button>
+        <button class="chip" data-mood="sad">難過</button>
+        <button class="chip" data-mood="anxious">焦慮</button>
+        <button class="chip" data-mood="lonely">孤單</button>
+        <button class="chip" data-mood="angry">委屈／生氣</button>
+        <button class="chip" data-mood="lost">迷惱</button>
+        <button class="chip" data-mood="ok">還好，只是想聽一句話</button>
+      </div>
+      <form id="talk-form" class="talk-form">
+        <label class="sr" for="feel">此刻想說的話</label>
+        <textarea id="feel" rows="4" placeholder="例如：今天什麼都做不好，晚上躺著卻睡不著……" maxlength="800"></textarea>
+        <div class="row">
+          <span class="hint" id="count">0 / 800</span>
+          <button type="submit" class="btn">把這份感覺交給我</button>
+        </div>
+      </form>
+      <article class="reply" id="reply" hidden>
+        <p class="reply-kicker">給你的回信</p>
+        <div class="reply-body" id="reply-body"></div>
+        <div class="reply-actions">
+          <button type="button" class="ghost" id="another">再給我一句</button>
+          <button type="button" class="ghost" id="save-note">收到小記裡</button>
+        </div>
+      </article>
+    </section>
+    <section id="view-breathe" class="view">
+      <p class="lead">先別急著想清楚。跟著圓圈，把氣慢慢送出去。</p>
+      <div class="breath-wrap">
+        <div class="orb" id="orb"><span id="orb-word">準備</span></div>
+        <p class="breath-meta" id="breath-meta">吸氣 4 · 停留 4 · 呼氣 6</p>
+        <button class="btn" id="breath-toggle">開始呼吸</button>
+      </div>
+    </section>
+    <section id="view-soup" class="view">
+      <p class="lead">心靈鷀湯不是要你立刻好起來，只是提醒：你不是一個人。</p>
+      <blockquote class="soup-card" id="soup-card">
+        <p id="soup-text"></p>
+        <cite id="soup-cite"></cite>
+      </blockquote>
+      <button class="btn" id="next-soup">再盛一勺</button>
+    </section>
+    <section id="view-journal" class="view">
+      <p class="lead">寫下來，不是為了漂亮，是為了讓心有個地方坐一坐。</p>
+      <div class="journal-list" id="journal-list"></div>
+      <p class="empty" id="journal-empty">還沒有小記。去「傾訴」說一句話，或把喜歡的回信收進來。</p>
+    </section>
+  </main>
+  <footer>
+    <p>這裡不診斷、不說教。若情緒很重、想傷害自己，請尋求身邊的人或當地協助專線。</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
