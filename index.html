@@ -13,11 +13,8 @@
   <div class="shell">
     <header class="top">
       <div class="brand">
-        <span class="mark" aria-hidden="true">◌</span>
-        <div>
-          <h1>暖心語</h1>
-          <p class="tag">我在，你可以慢慢說</p>
-        </div>
+        <span class="mark">◌</span>
+        <div><h1>暖心語</h1><p class="tag">我在，你可以慢慢說</p></div>
       </div>
       <nav class="tabs">
         <button type="button" class="tab is-on" data-view="talk">對話</button>
@@ -31,27 +28,28 @@
         <div class="thread" id="thread"></div>
         <div class="composer">
           <div class="moods">
-            <button type="button" class="chip" data-mood="tired" data-seed="今天好累，好像怎麼睡都補不回來。">好累</button>
-            <button type="button" class="chip" data-mood="sad" data-seed="心裡悶悶的，說不上來為什麼難過。">難過</button>
-            <button type="button" class="chip" data-mood="anxious" data-seed="腦子停不下來，一直在擔心還沒發生的事。">焦慮</button>
-            <button type="button" class="chip" data-mood="lonely" data-seed="明明有人在，還是覺得沒被接住。">孤單</button>
-            <button type="button" class="chip" data-mood="angry" data-seed="有點委屈，也有點生氣。">委屈</button>
-            <button type="button" class="chip" data-mood="lost" data-seed="暫時看不清下一步，有點迷惱。">迷惱</button>
+            <button type="button" class="chip" data-mood="tired" data-seed="今天好累。">好累</button>
+            <button type="button" class="chip" data-mood="sad" data-seed="心裡悶悶的。">難過</button>
+            <button type="button" class="chip" data-mood="anxious" data-seed="腦子停不下來。">焦慮</button>
+            <button type="button" class="chip" data-mood="lonely" data-seed="覺得沒被接住。">孤單</button>
+            <button type="button" class="chip" data-mood="angry" data-seed="有點委屈。">委屈</button>
+            <button type="button" class="chip" data-mood="lost" data-seed="有點迷惱。">迷惱</button>
           </div>
           <form id="talk-form" class="bar">
-            <textarea id="feel" rows="1" placeholder="跟我說一件正在發生的事……" maxlength="800"></textarea>
+            <textarea id="feel" rows="1" placeholder="跟我說一件正在發生的事……"></textarea>
             <button type="submit" class="send">送出</button>
           </form>
-          <div class="bar-meta">
-            <span>Enter 送出</span>
-            <button type="button" class="text-btn" id="new-chat">新的一輪</button>
-          </div>
+          <div class="bar-meta"><span>Enter 送出</span><button type="button" class="text-btn" id="new-chat">新的一輪</button></div>
         </div>
       </section>
       <section id="view-breathe" class="view">
-        <p class="lead">跟著圓圈，把氣慢慢送出去。</p>
+        <p class="lead">跟著球走，把氣慢慢送出去。</p>
         <div class="breath-wrap">
-          <div class="orb" id="orb"><span id="orb-word">準備</span></div>
+          <div class="orb-stage">
+            <div class="orb-glow"></div>
+            <div class="orb" id="orb"><span class="orb-shine"></span><span class="orb-rim"></span><span id="orb-word">準備</span></div>
+          </div>
+          <p class="breath-meta">吸氣 4 · 停留 4 · 呼氣 6</p>
           <button type="button" class="btn" id="breath-toggle">開始呼吸</button>
         </div>
       </section>
