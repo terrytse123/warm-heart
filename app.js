@@ -1,30 +1,46 @@
 (function () {
   const moods = {
-    tired: { label: "累", openings: ["聽得出來，你已經撐很久了。","累，其實是身體在替你說話。","你不是懶，是油箱快空了。"], middles: ["人不是機器，不能一直「再撐一下」。允許自己 tonight 什麼都不證明。","把標準暫時放低一格，不是放棄，是保命。","休息不是獎賞，是維修。你值得被維修。"] },
-    sad: { label: "難過", openings: ["難過可以不用解釋得清清楚楚。","這份沉，我聽見了。","心酸的時候，最怕有人急著叫你想開。"], middles: ["眼淚或發呆都算數。情緒走完自己的路，才會慢慢讓出空間。","你現在這樣，不是軟弱，是還在愛著某些東西。","不必今天就好起來。只要還願意坐在這裡說一句，就已經很勇敢。"] },
-    anxious: { label: "焦慮", openings: ["腦子轉太快的時候，身體會先緊起來。","焦慮喜歡假裝自己是預告片，其實很多畫面不會發生。","你不是失控，是太用力地想保護自己。"], middles: ["先把世界縮小成這一口氣。下一秒的事，等這一秒過完再談。","你沒有義務現在就把所有不確定一次解完。","把手放在心口，數四下呼吸。焦慮可以在，你也可以同時在。"] },
-    lonely: { label: "孤單", openings: ["孤單不是沒有人，是感覺沒有被接住。","夜深的時候，房間會特別大。","你願意把孤單說出來，它就不再是秘密。"], middles: ["今晚這段文字陪你坐一會兒。雖然隔著螢幕，心意是真的。","有人懂，不代表立刻有人出現；但你並非不值得被陪伴。","先對自己溫柔一點，像對待一個晚歸的朋友。"] },
-    angry: { label: "委屈", openings: ["委屈是一種沒被看見的痛。","生氣往往底下還墊著一句：「我也很努力了。」","你的感受有位置，不必先道歉。"], middles: ["先承認「這不公平」或「我好氣」，比急著原諒更誠實。","邊界被踩到時會發火，說明你還在乎自己。","把火關小一點就好，不必此刻把它滅成聖人。"] },
-    lost: { label: "迷惱", openings: ["看不清下一步，不代表你走錯了路。","迷惱常常出現在成長的交界處。","不一定要立刻找到意義，先允許空白存在。"], middles: ["方向感會回來的，通常是在你停止苛責自己之後。","今天只選一件最小的事：喝水、散步、或早點睡。也算前進。","人生不是單線任務。停在路口喘口氣，是被允許的。"] },
-    ok: { label: "還好", openings: ["還好也很好。不是每句話都要來自崩潰。","想來聽一句溫柔的話，本身就是一種照顧。","平靜的日子裡，也值得被好好對待。"], middles: ["願你把這一刻的輕，存一點給以後比較沉的晚上。","世界很吵，你還願意停下來聽一句話，這很美。","願你被善待，包括被你自己善待。"] }
+    tired: {
+      openings: ["聽得出來，你已經撐很久了。", "累，其實是身體在替你說話。", "你不是懶，是油箱快空了。"],
+      middles: ["人不是機器，不能一直「再撐一下」。", "把標準暫時放低一格，不是放棄，是保命。", "休息不是獎賞，是維修。"],
+      follows: ["還是很沉嗎？可以繼續說哪一件最耗你。", "如果今晚只能做一件恢復的事，你會選睡覺、洗澡，還是什麼都不做？", "我還在。累的時候，話短一點也沒關係。"]
+    },
+    sad: {
+      openings: ["難過可以不用解釋得清清楚楚。", "這份沉，我聽見了。", "心酸的時候，最怕有人急著叫你想開。"],
+      middles: ["眼淚或發呆都算數。", "你現在這樣，不是軟弱，是還在意某些東西。", "不必今天就好起來。"],
+      follows: ["想再說一點發生了什麼，或只是坐一會兒，都可以。", "這份難過有名字嗎？還是暫時沒有也沒關係。", "我接著聽。"]
+    },
+    anxious: {
+      openings: ["腦子轉太快的時候，身體會先緊起來。", "焦慮喜歡假裝自己是預告片。", "你不是失控，是太用力地想保護自己。"],
+      middles: ["先把世界縮小成這一口氣。", "你沒有義務現在就把所有不確定一次解完。", "焦慮可以在，你也可以同時在。"],
+      follows: ["此刻最吵的那個擔心，要不要點一下名字？", "要不要先去做個呼吸頁的練習，再回來跟我說？", "我們一次只看一件。"]
+    },
+    lonely: {
+      openings: ["孤單不是沒有人，是感覺沒有被接住。", "夜深的時候，房間會特別大。", "你願意把孤單說出來，它就不再是秘密。"],
+      middles: ["今晚這段對話陪你坐一會兒。", "你並非不值得被陪伴。", "先對自己溫柔一點，像對待晚歸的朋友。"],
+      follows: ["是想被理解，還是想有人在旁邊就好？", "如果你願意，說一個你希望有人知道的小事。", "我還在這條對話裡。"]
+    },
+    angry: {
+      openings: ["委屈是一種沒被看見的痛。", "生氣底下常常墊著一句：我也很努力了。", "你的感受有位置，不必先道歉。"],
+      middles: ["先承認「這不公平」，比急著原諒更誠實。", "邊界被踩到時會發火，說明你還在乎自己。", "把火關小一點就好，不必此刻當聖人。"],
+      follows: ["最讓你卡住的，是那句話、那件事，還是沒被看見？", "氣還在的話，就讓它在。我們慢慢拆。", "你想被聽完，還是想找下一步？"]
+    },
+    lost: {
+      openings: ["看不清下一步，不代表你走錯了路。", "迷惱常常出現在成長的交界處。", "不一定要立刻找到意義。"],
+      middles: ["方向感通常在停止苛責自己之後回來。", "今天只選一件最小的事，也算前進。", "停在路口喘口氣，是被允許的。"],
+      follows: ["現在最模糊的是工作、關係，還是對自己的感覺？", "若明天什麼都不必決定，你會先讓自己怎樣？", "我們不用一次看完整張地圖。"]
+    },
+    ok: {
+      openings: ["還好也很好。不是每句話都要來自崩潰。", "想來聽一句溫柔的話，本身就是一種照顧。", "平靜的日子裡，也值得被好好對待。"],
+      middles: ["願你把這一刻的輕，存一點給以後比較沉的晚上。", "世界很吵，你還願意停下來，這很美。", "願你被善待，包括被你自己善待。"],
+      follows: ["想聊下去的話，從一件小事開始就好。", "今天有沒有什麼小小的、還算溫暖的瞬間？", "我在這裡陪著。"]
+    }
   };
-  const closings = ["你已經很努力了。今晚，先把自己當成人就好。","我在這裡。你慢慢說，或不說，都沒關係。","把這句話帶去睡覺：你值得被溫柔對待。","先活過今天。明天的自己，會來接你。","若心還很重，記得向真實的人伸手。你不必獨自扛完。"];
-  const soups = [
-    { t: "人不是為了完美才被愛的。有裂縫的杯子，一樣能盛溫水。", c: "暖心語" },
-    { t: "你可以休息，世界不會因此塌下來。塌下來的往往是那個不肯停的自己。", c: "暖心語" },
-    { t: "成長有時看起來像退步：睡得更多、說得更少、把一些人放下。那也是整理。", c: "暖心語" },
-    { t: "不是所有夜晚都要有答案。有些夜晚只負責讓你活著過去。", c: "暖心語" },
-    { t: "被理解是奢侈，先被自己理解，是可以練習的日常。", c: "暖心語" },
-    { t: "你遲到的春天，仍然是春天。", c: "暖心語" },
-    { t: "把「我應該」換成「我可以」，肩膀會輕一點。", c: "暖心語" },
-    { t: "心軟不是缺陷。只是要記得，心軟也要留給自己。", c: "暖心語" },
-    { t: "今天沒有很厲害也沒關係。你還在，就已經超過昨天擔心的那個結局。", c: "暖心語" },
-    { t: "有些路是走給自己看的，不必直播，不必頒獎。", c: "暖心語" }
-  ];
+  const greetings = ["嗨，我在。不必一次說完，從任何一句開始都可以。", "你來了。今天心裡是輕的、沉的，還是說不上來？", "這是一段不會催你的對話。你想說多少，就說多少。"];
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
   function detectMood(text, selected) {
     if (selected && moods[selected]) return selected;
-    const s = text;
+    const s = text || "";
     if (/累|疲憊|撐不|睡不|加班|好倦/.test(s)) return "tired";
     if (/難過|傷心|哭|心酸|失落|憂鬱/.test(s)) return "sad";
     if (/焦|慌|怕|失眠|心跳|擔心|壓力/.test(s)) return "anxious";
@@ -33,24 +49,78 @@
     if (/迷|不知道|方向|未來|意義|放棄/.test(s)) return "lost";
     return "ok";
   }
-  function echoBit(text) {
-    const t = text.trim().replace(/\s+/g, " ");
-    if (t.length < 4) return "";
-    const clip = t.length > 36 ? t.slice(0, 36) + "……" : t;
-    return `你寫道：「${clip}」——這句話裡有重量，我沒有略過。`;
-  }
-  function compose(text, moodKey) {
+  function compose(text, moodKey, turn) {
     const m = moods[moodKey] || moods.ok;
-    const parts = [];
-    const echo = echoBit(text);
-    if (echo) parts.push(echo);
-    parts.push(pick(m.openings));
-    parts.push(pick(m.middles));
-    parts.push(pick(closings));
-    return parts.join("\n\n");
+    if (turn === 0) {
+      const echo = (text && text.trim().length > 3) ? "你剛說的，我記住了。" : "";
+      return [echo, pick(m.openings), pick(m.middles)].filter(Boolean).join("\n\n");
+    }
+    if (/謝謝|感謝/.test(text || "")) return "不客氣。你願意說出來，已經很溫柔地對待自己了。還想繼續的話，我都在。";
+    if (/呼吸|好緊張|心跳/.test(text || "")) return "若身體也跟著緊，可以點上面的「呼吸」，跟著圓圈走一輪，再回到這裡跟我說。";
+    return [pick(m.follows), pick(m.middles)].join("\n\n");
   }
+  const CHAT_KEY = "warm-heart-chat";
+  const NOTE_KEY = "warm-heart-notes";
+  const thread = document.getElementById("thread");
+  const feel = document.getElementById("feel");
   let currentMood = null;
-  let lastReply = "";
+  let userTurns = 0;
+  function loadChat() { try { return JSON.parse(localStorage.getItem(CHAT_KEY) || "[]"); } catch { return []; } }
+  function saveChat(list) { localStorage.setItem(CHAT_KEY, JSON.stringify(list)); }
+  function addBubble(role, text, persist) {
+    const el = document.createElement("div");
+    el.className = "bubble " + role;
+    el.textContent = text;
+    thread.appendChild(el);
+    if (role === "bot" && persist !== false && !el.classList.contains("typing")) {
+      const act = document.createElement("div");
+      act.className = "bubble-actions";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "text-btn";
+      btn.textContent = "收下這句";
+      btn.addEventListener("click", () => {
+        const notes = loadNotes();
+        notes.push({ at: new Date().toLocaleString("zh-Hant", { hour12: false }), text: text });
+        saveNotes(notes);
+        renderNotes();
+        btn.textContent = "已收下";
+      });
+      act.appendChild(btn);
+      thread.appendChild(act);
+    }
+    thread.scrollTop = thread.scrollHeight;
+    if (persist !== false) {
+      const list = loadChat();
+      list.push({ role: role, text: text, at: Date.now() });
+      saveChat(list);
+    }
+    return el;
+  }
+  function renderChat() {
+    thread.innerHTML = "";
+    const list = loadChat();
+    userTurns = list.filter((m) => m.role === "me").length;
+    if (!list.length) { addBubble("bot", pick(greetings), true); return; }
+    const line = document.createElement("div");
+    line.className = "dayline";
+    line.textContent = "對話還在，你可以接著說";
+    thread.appendChild(line);
+    list.forEach((m) => addBubble(m.role, m.text, false));
+  }
+  function replyTo(text, moodHint) {
+    const mood = detectMood(text, moodHint || currentMood);
+    currentMood = mood;
+    const typing = document.createElement("div");
+    typing.className = "bubble bot typing";
+    typing.textContent = "我在想怎麼接住這句……";
+    thread.appendChild(typing);
+    thread.scrollTop = thread.scrollHeight;
+    setTimeout(() => {
+      typing.remove();
+      addBubble("bot", compose(text, mood, userTurns === 1 ? 0 : userTurns), true);
+    }, 550 + Math.min(800, (text || "").length * 8));
+  }
   document.querySelectorAll(".tab").forEach((btn) => {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".tab").forEach((b) => b.classList.remove("is-on"));
@@ -64,34 +134,37 @@
       document.querySelectorAll(".chip").forEach((c) => c.classList.remove("is-on"));
       chip.classList.add("is-on");
       currentMood = chip.dataset.mood;
+      if (chip.dataset.seed) { feel.value = chip.dataset.seed; feel.focus(); }
     });
   });
-  const feel = document.getElementById("feel");
-  const count = document.getElementById("count");
-  feel.addEventListener("input", () => { count.textContent = feel.value.length + " / 800"; });
-  function showReply(text) {
-    lastReply = text;
-    const box = document.getElementById("reply");
-    const body = document.getElementById("reply-body");
-    body.innerHTML = text.split("\n\n").map((p) => "<p>" + escapeHtml(p) + "</p>").join("");
-    box.hidden = false;
-    box.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }
-  function escapeHtml(s) {
-    return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  }
   document.getElementById("talk-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const text = feel.value.trim();
-    showReply(compose(text, detectMood(text, currentMood)));
+    if (!text) return;
+    userTurns += 1;
+    addBubble("me", text, true);
+    feel.value = "";
+    feel.style.height = "auto";
+    replyTo(text, currentMood);
   });
-  document.getElementById("another").addEventListener("click", () => {
-    const text = feel.value.trim();
-    showReply(compose(text, detectMood(text, currentMood)));
+  feel.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      document.getElementById("talk-form").requestSubmit();
+    }
   });
-  const KEY = "warm-heart-notes";
-  function loadNotes() { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch { return []; } }
-  function saveNotes(list) { localStorage.setItem(KEY, JSON.stringify(list)); }
+  feel.addEventListener("input", () => {
+    feel.style.height = "auto";
+    feel.style.height = Math.min(140, feel.scrollHeight) + "px";
+  });
+  document.getElementById("new-chat").addEventListener("click", () => {
+    localStorage.removeItem(CHAT_KEY);
+    currentMood = null;
+    userTurns = 0;
+    renderChat();
+  });
+  function loadNotes() { try { return JSON.parse(localStorage.getItem(NOTE_KEY) || "[]"); } catch { return []; } }
+  function saveNotes(list) { localStorage.setItem(NOTE_KEY, JSON.stringify(list)); }
   function renderNotes() {
     const list = loadNotes();
     const el = document.getElementById("journal-list");
@@ -107,29 +180,25 @@
       el.appendChild(d);
     });
   }
-  document.getElementById("save-note").addEventListener("click", () => {
-    if (!lastReply) return;
-    const list = loadNotes();
-    list.push({ at: new Date().toLocaleString("zh-Hant", { hour12: false }), text: lastReply });
-    saveNotes(list);
-    renderNotes();
-    document.getElementById("save-note").textContent = "已收下";
-    setTimeout(() => { document.getElementById("save-note").textContent = "收到小記裡"; }, 1600);
-  });
+  const soups = [
+    { t: "人不是為了完美才被愛的。有裂縫的杯子，一樣能盛溫水。", c: "暖心語" },
+    { t: "你可以休息，世界不會因此塌下來。", c: "暖心語" },
+    { t: "不是所有夜晚都要有答案。有些夜晚只負責讓你活著過去。", c: "暖心語" },
+    { t: "你遲到的春天，仍然是春天。", c: "暖心語" },
+    { t: "把「我應該」換成「我可以」，肩膀會輕一點。", c: "暖心語" },
+    { t: "心軟不是缺陷。只是要記得，心軟也要留給自己。", c: "暖心語" }
+  ];
   let soupI = Math.floor(Math.random() * soups.length);
   function paintSoup() {
     const s = soups[soupI % soups.length];
     document.getElementById("soup-text").textContent = s.t;
-    document.getElementById("soup-cite").textContent = "— " + s.c;
+    document.getElementById("soup-cite").textContent = "\u2014 " + s.c;
   }
   document.getElementById("next-soup").addEventListener("click", () => { soupI += 1; paintSoup(); });
-  paintSoup();
-  renderNotes();
   const orb = document.getElementById("orb");
   const word = document.getElementById("orb-word");
   const toggle = document.getElementById("breath-toggle");
-  let breathing = false;
-  let timer = null;
+  let breathing = false, timer = null;
   function cycle() {
     if (!breathing) return;
     word.textContent = "吸氣";
@@ -152,4 +221,7 @@
     if (breathing) cycle();
     else { clearTimeout(timer); word.textContent = "準備"; orb.className = "orb"; }
   });
+  renderChat();
+  renderNotes();
+  paintSoup();
 })();
